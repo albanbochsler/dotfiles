@@ -1,0 +1,69 @@
+[core]
+	logAllRefUpdates = true
+
+[init]
+	defaultBranch = main
+
+[alias]
+	b = branch
+	ba = branch -av
+	bl = blame -C -C -C -n
+	ci = commit
+	cl = clone
+	co = checkout
+	cp = cherry-pick
+	d = diff -C
+	dc = diff --cached -C
+	dh = diff -C HEAD
+	ds = diff --stat -C
+	f = fetch
+	ff = pull --ff-only
+	fat = fetch --all --tags
+	g = grep -n
+	gg = grep -n -C3
+	l = log -C
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(bold)%s%C(reset) %C(white)- %an%C(reset)%C(yellow)%d%C(reset)' --all
+	lp = log -p -C
+	m = merge
+	p = pull
+	pub = "!git push origin HEAD~0:refs/heads/\"$1\" #"
+	rb = rebase
+	rl = reflog
+	rp = remote prune
+	rpo = remote prune origin
+	s = show -C
+	sm = submodule
+	sms = submodule summary
+	smu = submodule update --init
+	ss = show --stat -C
+	st = status
+        sync = !git pull --no-edit && git push
+	tags = log --oneline --decorate --tags --no-walk
+	todo = grep -n -C3 -E '\\b(XXX|TODO|FIXME)\\b'
+	tst = log --since='01:00' --date='format:%H:%M' --reverse --pretty='format:tst stop %ad \"%s\"'
+	view = !gitk --all&
+	wh = log --no-merges @{1}..
+	whp = log -p -C --no-merges @{1}..
+
+[color]
+	ui = auto
+
+[user]
+	name = Matthias Kestenholz
+	email = mk@feinheit.ch
+	signingkey = 9344937529B41ED56141194C0C3F200EF349129F
+
+[push]
+	default = matching
+
+[pull]
+	rebase = false
+
+[rerere]
+	default = matching
+
+[url "ssh://git@heroku.com/"]
+	insteadOf = https://git.heroku.com/
+
+[merge]
+	summary = true
